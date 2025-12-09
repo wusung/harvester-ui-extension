@@ -1,0 +1,1917 @@
+generic:
+  tip: 提示
+  resourceExternalLinkTips: 外部連結
+  namespace: 命名空間
+  notReady: 未就緒
+  labels: 標籤
+  inProgress: 進行中
+  basic: 基本
+  loading: 載入中...
+
+unsupported:
+  serverVersion: 目前版本：<code>{serverVersion}</code>
+  description: Harvester 使用者介面僅支援 1.3.0 或更高版本的 Harvester 叢集。
+  learnMore: 從 <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">Harvester 網站</a>了解更多資訊，或閱讀 <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">Harvester 文件</a>
+
+nav:
+  group:
+    networks: 網路
+    backupAndSnapshot: 備份與快照
+    Monitoring: 監控
+    Logging: 日誌
+    'Monitoring and Logging': 監控與日誌
+
+resourceTable:
+  groupBy:
+    device: 依裝置分組
+
+validation:
+  arrayCountRequired: 至少需要 {count} 個 {key}，且 {key} 不能為空。
+
+members:
+  clusterMemebership: 叢集成員
+  projectMembership: 專案成員
+
+asyncButton:
+  restart:
+    action: 儲存並重新啟動
+    success: 已重新啟動
+    waiting: 重新啟動中&hellip;
+
+dialog:
+  confirmExecution:
+    title: 確定要執行嗎？
+    andOthers: |-
+      {count, plural,
+      =0 {}
+      =1 { 以及<b>另外一個</b>}
+      other { 以及<b>另外 {count} 個</b>}
+      }
+    protip: 提示：按住 {alternateLabel} 鍵同時點選操作可略過此確認
+    stop:
+      message: 確定要停止 {type} {names} 嗎？
+    pause:
+      message: 確定要暫停 {type} {names} 嗎？
+    restart:
+      message: 確定要重新啟動 {type} {names} 嗎？
+    softreboot:
+      message: 確定要軟重新啟動 {type} {names} 嗎？
+  promptRemove:
+    title: 刪除 {type}
+    warningMessage: 刪除選定的 {type} 將永久移除{thisOrThese} {type} 上的所有資源。此操作無法復原。確定要繼續嗎？
+    confirmName: 輸入 <b>{nameToMatch}</b> 以刪除 {type}：
+    protip: 提示：按住 {alternateLabel} 鍵同時點選刪除可略過確認步驟。
+
+harvester:
+  branding:
+    logos:
+      tip: 上傳標誌以替換頂層導航標題中的 Harvester 標誌。圖片高度應為 21 像素，最大寬度為 200 像素。檔案大小上限為 20KB。接受的格式：JPEG、PNG、SVG。
+    favicon:
+      tip: 上傳圖示以替換瀏覽器分頁中的 Harvester 圖示。檔案大小上限為 20KB
+  productLabel: Harvester
+  modal:
+    backup:
+      success: 備份 { backUpName } 已開始。
+      addBackup: 新增備份
+    quota:
+      editVMQuota: 編輯虛擬機器配額
+      editQuota: 編輯配額
+      bannerMessage: 設定為空字串或 0 以移除快照總大小配額。
+    restore:
+      success: 還原 { name } 已成功建立。
+      title: 備份與還原
+      selectBackup: 選擇備份
+      message:
+        backup: 請選擇需要還原的備份。
+    createTemplate:
+      title: 產生範本
+      name: 名稱
+      description: 描述
+      message:
+        tip: 請輸入範本名稱！
+        success: 範本 { templateName } 已成功建立。
+        failed: 產生範本失敗！
+    schedule:
+      title: 建立排程
+      message:
+        tip: 請輸入排程名稱！
+        success: 排程 { name } 已成功建立。
+        failed: 建立排程失敗！
+    cloneVM:
+      title: 複製虛擬機器
+      name: 新虛擬機器名稱
+      type: 複製磁碟區資料
+      action:
+        create: 建立
+        clone: 複製
+      message:
+        tip: 請輸入虛擬機器名稱！
+        success: 虛擬機器 { name } 已成功複製。
+        failed: 複製虛擬機器失敗！
+    osImage:
+      title: 刪除映像檔
+      message: 確定要刪除映像檔 { name } 嗎？
+    downloadImage:
+      title: 下載映像檔
+      banner: 此操作需要一段時間，視映像檔大小（{ size }）而定。請耐心等候。
+      startMessage: 轉換完成後會自動開始下載。
+      download: 下載
+    exportImage:
+      title: 匯出為映像檔
+      name: 名稱
+      namespace: 命名空間
+      message:
+        success: 映像檔 { name } 已成功建立。
+    migration:
+      failedMessage: 最近一次遷移失敗！
+      title: 遷移
+      fields:
+        nodeName:
+          label: 目標節點
+          placeholder: 選擇目標節點
+    ejectCDROM:
+      title: 退出 CD-ROM
+      warnTip: 退出磁碟區將重新啟動虛擬機器。
+      operationTip: 選擇要刪除的磁碟區：
+      delete: 刪除
+    bundle:
+      title: 產生支援包
+      titleDescription: 收集 Harvester 中的系統相關日誌以協助疑難排解與支援。
+      tip: 以下每個欄位指定支援包的一個方面。詳細說明請參閱<a href="{doc}" target="_blank">文件</a>。
+      url: 問題 URL
+      description: 描述
+      namespaces:
+        label: 命名空間
+        tooltip: 選擇要包含在支援包中的其他命名空間。<br/>詳見文件 support-bundle-namespaces。
+        selectAll: 全選
+        unselectAll: 全部取消選取
+      timeout:
+        label: 逾時時間
+        tooltip: 允許完成支援包產生程序的分鐘數。<br/>詳見文件 support-bundle-timeout。
+      expiration:
+        label: 過期時間
+        tooltip: 在刪除已打包但未下載的支援包之前的分鐘數。<br/>詳見文件 support-bundle-expiration。
+      nodeTimeout:
+        label: 節點收集逾時時間
+        tooltip: 允許在節點上收集日誌/設定的分鐘數。<br/>詳見文件 support-bundle-node-collection-timeout。
+    hotplug:
+      success: 磁碟區 { diskName } 已掛載到虛擬機器 { vm }。
+      title: 新增磁碟區
+    cpuMemoryHotplug:
+      success: CPU 與記憶體已更新至虛擬機器 { vm }。
+      title: 編輯 CPU 與記憶體
+      maxResourcesMessage: 您可以將 CPU 增加至最大 { maxCpu }C，記憶體增加至最大 { maxMemory }。
+    hotunplug:
+      success: 磁碟區 { name } 已成功卸除。
+    snapshot:
+      title: 建立快照
+      name: 名稱
+      message:
+        success: 已成功建立快照 { name }。
+    volumeClone:
+      title: 複製磁碟區
+      name: 名稱
+      message:
+        success: 新磁碟區 { name } 已成功複製。
+    restoreSnapshot:
+      title: 還原快照
+      name: 新磁碟區名稱
+      success: 新磁碟區 { name } 已成功還原。
+    vmSnapshot:
+      title: 建立虛擬機器快照
+      name: 名稱
+      success: 已成功建立虛擬機器快照 { name }。
+    restart:
+      title: 重新啟動虛擬機器
+      tip: 重新啟動虛擬機器以使設定變更生效。
+      cancel: 儲存
+  notification:
+    title:
+      succeed: 成功
+      info: 資訊
+      warning: 警告
+      error: 錯誤
+  action:
+    createVM: 建立虛擬機器
+    start: 啟動
+    restart: 重新啟動
+    softreboot: 軟重新啟動
+    stop: 停止
+    pause: 暫停
+    deepClone: 複製
+    shallowClone: 複製範本
+    unpause: 取消暫停
+    encryptImage: 加密映像檔
+    decryptImage: 解密映像檔
+    ejectCDROM: 退出 CD-ROM
+    editVMQuota: 編輯虛擬機器配額
+    launchFormTemplate: 從範本啟動執行個體
+    modifyTemplate: 修改範本（建立新版本）
+    setDefaultVersion: 設定預設版本
+    addTemplateVersion: 新增範本版本
+    backup: 建立備份
+    createSchedule: 建立排程
+    restore: 還原
+    restoreNewVM: 還原為新虛擬機器
+    resumeSchedule: 繼續
+    suspendSchedule: 暫停
+    restoreExistingVM: 取代現有虛擬機器
+    migrate: 遷移
+    cpuAndMemoryHotplug: 編輯 CPU 與記憶體
+    abortMigration: 中止遷移
+    createTemplate: 產生範本
+    enableMaintenance: 啟用維護模式
+    disableMaintenance: 停用維護模式
+    enableCPUManager: 啟用 CPU 管理器
+    disableCPUManager: 停用 CPU 管理器
+    cordon: 標記為不可排程
+    uncordon: 標記為可排程
+    addHotplug: 新增磁碟區
+    exportImage: 匯出映像檔
+    viewlogs: 檢視日誌
+    cancelExpand: 取消擴充
+    snapshot: 建立快照
+    pvcClone: 複製磁碟區
+    vmSnapshot: 建立虛擬機器快照
+    shutdown: 關機
+    powerOn: 開機
+    reboot: 重新開機
+    forceStop: 強制停止
+  formatters:
+    hardwareResourceGauge:
+      allocated: 已配置
+      consumption: "{useful} / {total} {units} {suffix}"
+      cores: CPU
+      pods: Pod
+      ram: 記憶體
+      used: 已使用
+      reserved: 已保留
+      units:
+        cores: |-
+          {count, plural,
+          =1 {核心}
+          other {核心}}
+    harvesterIpAddress:
+      customIpTooltip: 自訂 IP（透過註解設定）
+  tableHeaders:
+    imageEncryption: 加密
+    size: 大小
+    virtualSize: 虛擬大小
+    progress: 進度
+    message: 訊息
+    phase: 階段
+    attachedVM: 已連接的虛擬機器
+    cpuManager: CPU 管理器
+    fingerprint: 指紋
+    value: 值
+    actions: 操作
+    readyToUse: 準備就緒
+    backupTarget: 備份目標
+    targetVm: 目標虛擬機器
+    cronExpression: Cron 表達式
+    retain: 保留
+    scheduleType: 類型
+    maxFailure: 最大失敗次數
+    sourceVm: 來源虛擬機器
+    vmSchedule: 虛擬機器排程
+    hostIp: 主機 IP
+    vm:
+      ipAddress: IP 位址
+      node: 節點
+      defaultVersion: 預設版本
+    network:
+      type: 類型
+      vlan: VLAN ID
+    snapshotTargetVolume: 原始磁碟區
+    volumeSnapshotCounts: 快照數量
+    networkState: 網路狀態
+    totalSnapshotQuota: 快照總配額
+    storageClass: 儲存類別
+    restore: 還原
+  tab:
+    volume: 磁碟區
+    network: 網路
+    advanced: 進階選項
+    accessCredentials: 存取憑證
+    pciDevices: PCI 裝置
+    vGpuDevices: vGPU 裝置
+    usbDevices: USB 裝置
+    vmScheduling: 虛擬機器排程
+    quotas: 配額
+    snapshots: 快照
+    instanceLabel: 執行個體標籤
+    annotations: 註解
+  fields:
+    version: 版本
+    name: 名稱
+    type: 類型
+    image: 映像檔
+    size: 大小
+    volume: 磁碟區
+    network: 網路
+    model: 型號
+    macAddress: MAC 位址
+    port: 連接埠
+    protocol: 通訊協定
+    remove: 移除
+    PhysicalNic: 實體網路介面卡
+    cpu: CPU
+    memory: 記憶體
+    virtualName: 虛擬機器名稱
+    promiscuous: 混雜模式
+    ipv4Address: IPv4 位址
+    filterLabels: 篩選標籤
+    filterSchedule: 篩選排程
+    storageClass: 儲存類別
+    dockerImage: Docker 映像檔
+  pci:
+    available: 可用裝置
+    compatibleNodes: 相容節點
+    impossibleSelection: 沒有主機擁有所有選定的裝置。
+    howToUseDevice: 使用下表在您想要在此虛擬機器中使用的每個裝置上啟用 PCI 穿透。
+    deviceInTheSameHost: 您只能選擇同一主機上的裝置。
+    oldFormatDevices:
+      help: |-
+        <p>
+          以下 PCI 裝置使用舊的命名慣例，需要在 YAML 檔案中更新：
+        </p>
+        <ul>
+          {oldFormatDevicesHTML}
+        </ul>
+        <p>
+          請使用以下指示更新虛擬機器：
+        </p>
+        <ol>
+          <li>停止虛擬機器，編輯虛擬機器 YAML，移除 <Code>hostDevices</Code> 區段，並儲存虛擬機器變更到 YAML 檔案。</li>
+          <li>編輯虛擬機器，從可用 PCI 裝置清單中新增已啟用的 PCI 裝置，並儲存並啟動虛擬機器。</li>
+        </ol>
+    showCompatibility: 顯示裝置相容性矩陣
+    hideCompatibility: 隱藏裝置相容性矩陣
+    claimError: 在 {name} 上啟用穿透時發生錯誤
+    unclaimError: 在 {name} 上停用穿透時發生錯誤
+    cantUnclaim: 您無法停用其他使用者所宣告的裝置穿透。
+    enableGroup: 啟用群組
+    disableGroup: 停用群組
+    labelRequired: 此規則不應手動變更：它確保為此虛擬機器選定的 PCI 裝置在虛擬機器的主機上可用。
+    goSetting:
+      prefix: pcidevices-controller 附加元件未啟用，點選
+      middle: 此處
+      suffix: 以啟用附加元件來成功管理您的 PCI 裝置。
+    noPCIPermission: 請聯絡系統管理員以先啟用 PCI 裝置。
+    enablePassthroughWarning: 請小心不要使用主機擁有的 PCI 裝置（例如管理和 VLAN NIC）。不正確的裝置配置可能會對您的叢集造成損害，包括節點故障。
+
+  devices:
+    matrixHostName: 主機名稱
+    matrixDeviceClaimName: 裝置宣告名稱
+
+  generic:
+    close: 關閉
+    open: 開啟
+    showMore: 顯示更多
+    hideMore: 隱藏更多
+    memory: 記憶體
+    cpu: CPU
+    storage: 儲存
+    noFileChosen: 未選擇檔案
+    noSchema: 找不到自訂資源定義：{schema}。
+
+  validation:
+    custom:
+      tooLongName: 「名稱」不能超過 {max} 個字元。
+    generic:
+      hasDelete: '{type} 「{name}」已被刪除。'
+      maxLength: '「{key}」不能超過 {max} 個字元'
+      tabError: '{prefix}：{message}'
+      maximumSize: 超過最大大小 {max}！
+      regex: '無效的 {lowerType} 「{name}」：{upperType} 必須符合正規表達式「{regex}」'
+    vm:
+      name: 名稱為必填！
+      memory: 「記憶體」為必填！
+      duplicatedName: '重複的 {type} 名稱：「{name}」'
+      network:
+        macFormat: 無效的 MAC 位址格式。
+        upperType: 網路名稱
+        lowerType: 網路名稱
+      volume:
+        upperType: 磁碟區名稱
+        lowerType: 磁碟區名稱
+        needImageOrExisting: 至少需要一個映像檔磁碟區或一個現有的根磁碟磁碟區！
+    image:
+      ruleTip: 您輸入的 URL 結尾副檔名不受支援。我們只接受結尾為 .img、.iso、.qcow、.qcow2、.raw 的映像檔。
+      ruleFileTip: 您選擇的檔案結尾副檔名不受支援。我們只接受結尾為 .img、.iso、.qcow、.qcow2、.raw 的映像檔。
+    hash:
+      sha512: 無效的 SHA512 校驗和。
+    subnet:
+      excludeIps: 排除 IP 不能為空。請移除或填入排除 IP。
+
+  dashboard:
+    label: 儀表板
+    header: Harvester 叢集：{cluster}
+    hardwareResourceGauge:
+      cpu: CPU
+      memory: 記憶體
+      storage: 儲存
+      allocated: 已配置
+    sections:
+      events:
+        label: 事件
+      vmMetrics:
+        label: 虛擬機器指標
+
+    version: 版本
+  host:
+    console: 控制台
+    label: 主機
+    inconsistentIP: 主機 IP 不一致，目前 IP：{ currentIP }，初始 IP：{ initIP }
+    noConsoleUrl: 未指定控制台 URL
+    promote:
+      none: ' '
+      running: 提升中
+      failed: 提升失敗
+      unknown: 提升已停止
+      promoteRestart: 重新啟動中
+      promoteSucceed: 提升已完成
+    tabs:
+      network: 網路
+      overview: 概觀
+      basics: 基本資訊
+      instance: 虛擬機器
+      monitor: 監控資料
+      storage: 儲存
+      labels: 標籤
+      ksmtuned: Ksmtuned
+      seeder: 頻外存取
+    detail:
+      kvm:
+        disableMessage: 硬體型虛擬化已停用或不受支援。建立任何虛擬機器之前必須啟用硬體型虛擬化。
+      title:
+        network: 網路設定
+      hostIP: 主機 IP
+      role: 角色
+      os: 作業系統
+      create: 建立時間
+      update: 上次更新時間
+      customName: 自訂名稱
+      consoleUrl: 控制台 URL
+      more: 更多資訊
+      uuid: UUID
+      containerRuntime: 容器執行階段
+      kernel: 核心
+      management: 管理節點
+      compute: 運算節點
+      storage: 儲存
+      nic: 實體網路介面卡
+      notRecommended: 不建議
+      networkType: 類型
+      manufacturer: 製造商
+      serialNumber: 序號
+      model: 型號
+      etcd: 見證節點
+      cpuManager: CPU 管理器
+    enableMaintenance:
+      title: 啟用維護模式
+      protip: 此操作將把此節點上的所有虛擬機器遷移到其他節點。
+      shutDownVMs: 勾選<b>強制</b>選項以關閉無法在即時模式下遷移的虛擬機器。
+      force: 強制
+    cordon:
+      title: 標記為不可排程
+      protip: 此操作將把節點 { node } 標記為不可排程。
+    ksmtuned:
+      run: 執行策略
+      configure: 設定
+      mode: 模式
+      modeLink: 模式 <a href="{url}" target="_blank"><i class="icon icon-info" /></a>
+      thresCoef: 臨界值係數
+      enableMergeNodes: 啟用跨節點合併
+      enable: 啟用
+      disable: 停用
+      ksmStatus: KSM 狀態
+      modeOption:
+        standard: 標準
+        high: 高效能
+        customized: 自訂
+      parameters:
+        title: Ksmtuned 參數
+        boost: 提升
+        decay: 衰減
+        sleepMsec: 睡眠時間（毫秒）
+        minPages: 最小頁數
+        maxPages: 最大頁數
+        description:
+          boost: 如果可用記憶體小於臨界值係數，每次掃描頁數會遞增。
+          decay: 如果可用記憶體大於臨界值係數，每次掃描頁數會遞減。
+          sleepMsec: 兩次掃描之間的間隔（最小值為 10 毫秒），由公式（睡眠毫秒 * 16 * 1024 * 1024 / 總記憶體）計算。
+          minPages: 每次掃描的最小頁數，也是首次執行的設定。
+          maxPages: 每次掃描的最大頁數。
+      statistics:
+        title: 統計資料 <a href="https://www.kernel.org/doc/html/latest/admin-guide/mm/ksm.html#ksm-daemon-sysfs-interface" target="_blank"><i class="icon icon-info" /></a>
+        sharing: 共享中
+        shared: 已共享
+        unshared: 未共享
+        volatile: 易失性
+        fullScans: 完整掃描
+        stableNodeChains: 穩定節點鏈
+        stableNodeDups: 穩定節點重複
+    disk:
+      add: 新增磁碟
+      path:
+        label: 路徑
+      storageReserved:
+        label: 保留儲存
+      allowScheduling:
+        label: 排程
+        tooltip: 磁碟 {name}（{path}）的排程已停用
+      evictionRequested:
+        label: 已請求驅逐
+      forceFormatted:
+        label: 強制格式化
+        toolTip: 強制格式化將清除磁碟資料，請確保備份所有可用資料以防止資料遺失。
+        yes: 是（Ext4 檔案系統）
+      description:
+        label: 描述
+      lastFormattedAt:
+        info: 磁碟已被強制格式化。
+      notification:
+        success: 已成功更新主機「{name}」的儲存設定。
+      error: 主機有未就緒或不可排程的磁碟。
+      fileSystem:
+        info: 目前檔案系統為 {system}，您可以手動格式化它。
+        formatting: 磁碟正在格式化，請稍候。
+      tags:
+        label: 磁碟標籤
+        addLabel: 新增磁碟標籤
+      conditions: 條件
+      storageAvailable:
+        label: 可用儲存
+      storageScheduled:
+        label: 已排程儲存
+      storageMaximum:
+        label: 最大儲存
+      provisioner: 供應程式
+      lvmVolumeGroup:
+        label: 磁碟區群組
+        create: 建立新的...
+      storage:
+        longhorn:
+          LonghornV1:
+            label: Longhorn V1（CSI）
+          LonghornV2:
+            label: Longhorn V2（CSI）
+        lvm:
+          label: LVM
+    tags:
+      label: 主機標籤
+      addLabel: 新增主機標籤
+    powerAction:
+      message:
+        success: 已成功對主機 { name } 執行 { operation }。
+    ntp:
+      label: NTP 伺服器位址
+      tips: 您可以設定多個 IPv4 位址或主機位址。
+      placeholder: 例如 IPv4
+      ntpSyncStatus:
+        isDisabled: NTP 已停用。請檢查 NTP 服務是否作用中。
+        isUnsynced: NTP 未與 NTP 伺服器 {current} 同步。
+
+  virtualMachine:
+    label: 虛擬機器
+    osType: 作業系統類型
+    hotplug:
+      title: 啟用 CPU 與記憶體熱插拔
+      tooltip: 預設最大 CPU 與最大記憶體是 CPU 與記憶體的 {hotPlugTimes} 倍。
+      restartVMMessage: 虛擬機器設定變更需要重新啟動才能生效
+    instance:
+      singleInstance:
+      multipleInstance:
+      single:
+        label: 單一執行個體
+        nameLabel: 名稱
+        host:
+          label: 主機名稱
+          placeholder: 預設為虛擬機器名稱。
+      multiple:
+        label: 多個執行個體
+        nameNsDescription: 每個執行個體的名稱前綴
+        count: 數量
+        countTip: 數量應介於 1 到 10 之間
+        nameLabel: 名稱前綴
+        host:
+          label: 主機前綴名稱
+          placeholder: 預設為虛擬機器名稱。
+    useTemplate:
+      label: 使用虛擬機器範本：
+      template:
+        label: 範本
+      version:
+        label: 版本
+    console:
+      novnc: 在 WebVNC 中開啟
+      serial: 在序列控制台中開啟
+    promptRemove:
+      title: 選擇要刪除的磁碟區：
+      deleteAll: 全部刪除
+      tips: 警告：虛擬機器的快照將隨虛擬機器一起刪除，磁碟區的快照將隨磁碟區一起刪除。
+    unplug:
+      title: 確定要卸除磁碟區 {name} 嗎？
+      actionLabel: 卸除
+      detachVolume:
+        卸除磁碟區
+    restartTip: |-
+      {restart, select,
+        true {重新啟動}
+        other {啟動}
+      }虛擬機器以使設定變更生效。
+    runStrategy: 執行策略
+    maintenanceStrategy:
+      label: 維護策略
+      options:
+        Migrate: 遷移
+        ShutdownAndRestartAfterEnable: 啟用後關機並重新啟動
+        ShutdownAndRestartAfterDisable: 停用後關機並重新啟動
+        Shutdown: 關機
+    cpuPinning:
+      label: 啟用 CPU 釘選
+      tooltip: 啟用 CPU 釘選可為虛擬機器帶來更好的效能並減少延遲
+      restartVMMessage: 變更 CPU 釘選設定需要重新開機虛擬機器才能生效
+      migrationMessage: 此虛擬機器只能遷移到已啟用 CPU 管理器的目標節點，因為已設定 CPU 釘選。
+    restartNow: |-
+      {restart, select,
+        true {立即重新啟動}
+        other {立即啟動}
+      }
+    createSSHKey: 建立新的...
+    installAgent: 安裝客體代理程式
+    enableUsb: 啟用 USB 平板
+    advancedOptions:
+      tpm: 啟用 TPM
+      tpmPersistentState: TPM 持久狀態
+      cpuManager:
+        prefix: 您必須在
+        middle: 主機頁面
+        suffix: 為至少一個節點啟用 CPU 管理器，才能為虛擬機器啟用 CPU 釘選
+      efiEnabled: 以 EFI 模式開機
+      efiPersistentState: EFI 持久狀態
+      secureBoot: 安全開機
+    usbTip: 提供絕對指標裝置，通常有助於在 VNC 中取得一致的滑鼠游標位置。
+    sshTitle: 新增公開 SSH 金鑰
+    imageTip: 虛擬機器應從中建立的 .iso、.img、.qcow2 或 .raw 的外部 URL。
+    volume:
+      dragTip: 拖放磁碟區，或使用磁碟區的箭頭來變更開機順序。
+      volumeTip: 虛擬機器只包含 CD-ROM 磁碟區。您可能想要新增其他磁碟磁碟區。
+      macTip: 在客體系統內看到的 MAC 位址。
+      volumeUpdate: 已成功設定磁碟區 { name }
+      type: 類型
+      size: 大小
+      edit: 編輯
+      bus: 匯流排
+      readyToUse: 準備就緒
+      bootOrder: 開機順序
+      volume: 磁碟區
+      dockerImage: Docker 映像檔
+      addVolume: 新增磁碟區
+      addExistingVolume: 新增現有磁碟區
+      addVmImage: 新增虛擬機器映像檔
+      addContainer: 新增容器
+      setFirst: 設定為根磁碟區
+      saveVolume: 更新磁碟區
+      encryption: 加密
+      vmImageVolumeTip: 磁碟大小（{diskSize}）應大於所選映像檔虛擬大小（{imageVirtualSize}）
+      lockTooltip:
+        all: 所有磁碟區都已加密。
+        partial: 部分磁碟區已加密。
+      title:
+        vmImage: 映像檔磁碟區
+        existingVolume: 現有磁碟區
+        volume: 磁碟區
+        container: 容器
+      unmount:
+        title: 確定嗎？
+        message: 確定要卸載此磁碟區嗎？
+    network:
+      title: 網路
+      addNetwork: 新增網路
+      addPort: 新增連接埠
+    cloudConfig:
+      title: 雲端設定
+      createTemplateTitle: 建立 {name}。
+      createNew: 建立新的...
+      cloudInit:
+        label: Cloud Init
+        placeholder: 選擇範本
+      user:
+        label: 使用者資料範本
+        title: 使用者資料：
+        tip: 您可以指定使用者資料來設定執行個體，或在啟動期間執行設定指令碼。如果您一次啟動多個執行個體，使用者資料可供該保留區中的所有執行個體使用。<a href='https://cloudinit.readthedocs.io/en/latest/topics/examples.html' target='_blank'>深入了解</a>
+      network:
+        label: 網路資料範本
+        title: 網路資料：
+        tip: network-data 設定允許您透過指派子網路設定、虛擬裝置建立（繫結、橋接、VLAN）、路由和 DNS 設定來自訂執行個體的網路介面。<a href='https://cloudinit.readthedocs.io/en/latest/reference/network-config-format-v1.html' target='_blank'>深入了解</a>
+    scheduling:
+      affinity:
+        anyNode: 在任何可用節點上執行虛擬機器
+        schedulingRules: 在符合排程規則的節點上執行虛擬機器
+        specificNode: 在特定節點上執行虛擬機器 - （不支援即時遷移）
+      networkNotSupport: 網路不支援排程
+    accessCredentials:
+      resetPwd:
+        label: 新增基本驗證
+      injectSSH:
+        label: 新增 SSH 金鑰
+        users: 選擇使用者
+        addUser: 新增使用者
+      tips: 必須安裝 qemu-guest-agent 才能啟用憑證存取。新增憑證後需要重新啟動虛擬機器。刪除憑證後，您需要在虛擬機器中編輯您的密碼或移除 SSH 金鑰。
+      userTips: 要新增的使用者必須已經存在，否則憑證將不會生效。
+      duplicatedUser: 使用者已存在。
+      invalidUser: 無效的使用者名稱。
+    input:
+      name: 名稱
+      cpu: CPU
+      maxCpu: 最大 CPU
+      maxMemory: 最大記憶體
+      memory: 記憶體
+      image: 映像檔
+      sshKey: SSH 金鑰
+      sshKeyValue: SSH 金鑰
+      MachineType: 機器類型
+      username: 使用者名稱
+      password: 密碼
+      reservedMemory: 保留記憶體
+    machineTypeTip: 指定要模擬的處理器架構。若要查看支援的架構清單，請執行：qemu-system-x86_64 -cpu ?
+    detail:
+      tabs:
+        overview: 概觀
+        details: 詳細資訊
+        environment: 環境
+        events: 事件
+        migration: 遷移
+        console: 控制台
+        networkInterfaces: 網路介面
+        disks: 磁碟
+        networks: 網路
+        basics: 基本資訊
+        configurations: 設定
+        inventory: 清單
+        hostBasic: 基本屬性
+        instance: 虛擬機器
+        monitor: 監控資料
+        keypairs: SSH 金鑰
+        cloudConfig: 雲端設定
+        metrics: 虛擬機器指標
+      details:
+        title:
+          vmDetails: 虛擬機器詳細資訊
+          requirements: 排程與資源需求
+          services: 服務
+          users: 已登入的使用者
+        name: 名稱
+        totalSnapshotQuota: 快照總配額
+        namespace: 命名空間
+        created: 已建立
+        hostname: 主機名稱
+        node: 節點
+        ipAddress: IP 位址
+        status: 狀態
+        pod: Pod
+        labels: 標籤
+        bootOrder: 開機順序
+        annotations: 註解
+        CDROMs: CD-ROM
+        description: 描述
+        operatingSystem: 作業系統
+        template: 範本
+        kernelRelease: 核心版本
+        owner: 擁有者
+        workloadProfile: 工作負載設定檔
+        nodeSelector: 節點選擇器
+        flavor: 規格
+        tolerations: 容忍
+        dedicatedResources: 專用資源
+        down: 虛擬機器未執行
+        affinityRules: 親和性規則
+        phase: 階段
+        sourceNode: 來源節點
+        targetNode: 目標節點
+        started: 已啟動
+        ended: 已結束
+      notAvailable: 無法使用
+      GuestAgentNotInstalled: 需要客體代理程式
+      noOwner: 無擁有者
+      events:
+        from: 產生來源
+        down: 過去一小時內沒有事件
+      console:
+        down: 此虛擬機器已關機。請啟動它以存取其控制台。
+        shortcutKeys: 快速鍵
+        customShortcutKeys: 自訂快速鍵
+        management: 管理快速鍵
+        record:
+          start: 錄製
+          recording: 錄製中
+          stop: 停止錄製
+          tips: 按下錄製按鈕以擷取您的鍵盤輸入。
+          send: 傳送
+          preferredKeys: 偏好的自訂快速鍵
+    terminationGracePeriodSeconds:
+      label: 終止寬限期
+    affinity:
+      addLabel: 新增工作負載選擇器
+      topologyKey:
+        placeholder: topology.kubernetes.io/zone
+      thisPodNamespace: 此虛擬機器的命名空間
+      matchExpressions:
+        inNamespaces: 這些命名空間中的工作負載
+      namespaces:
+        label: 命名空間
+    instanceLabels:
+      banner: 這些標籤會自動同步到虛擬機器執行個體。
+    labels:
+      banner: 這些鍵值會新增為虛擬機器的標籤。
+    annotations:
+      banner: 這些鍵值會新增為虛擬機器的註解。
+
+  volume:
+    label: 磁碟區
+    tabs:
+      basics: 基本資訊
+      snapshots: 快照
+      datasource: 資料來源
+      details: 詳細資訊
+    size: 大小
+    volumeMode: 磁碟區模式
+    source: 來源
+    kind: 種類
+    sourceOptions:
+      new: 新建
+      vmImage: 虛擬機器映像檔
+    image: 映像檔
+    frontend: 前端
+    blockdev: 區塊裝置
+    attachedNode: 已連接節點
+    endpoint: 端點
+    diskTags: 磁碟標籤
+    nodeTags: 節點標籤
+    lastBackup: 上次備份
+    lastBackupAt: 上次備份時間
+    replicasNumber: 副本數量
+    promptRemove:
+      tips: 警告：磁碟區的快照將隨此磁碟區一起刪除。
+    externalLink:
+      tips: 檢查磁碟區詳細資訊
+    rebuildingMessage: 重建中：{percentage}%
+    longhorn:
+      disableResize: Longhorn V2 磁碟區無法調整大小。
+
+  image:
+    label: 映像檔
+    tabs:
+      basics: 基本資訊
+    url: URL
+    size: 大小
+    isEncryption: 加密
+    encryptionSecret: 加密密鑰
+    virtualSize: 虛擬大小
+    urlTip: 支援 <a href="https://www.qemu.org/docs/master/system/images.html#disk-image-file-formats" target="_blank">qemu</a> 支援的 <code>raw</code> 和 <code>qcow2</code> 映像格式。可開機的 ISO 映像檔也可以使用，並視為 <code>raw</code> 映像檔。
+    fileName: 檔案名稱
+    uploadFile: 上傳檔案
+    source: 來源類型
+    sourceType:
+      download: URL
+      upload: 檔案
+      clone: 複製
+      encrypt: 加密
+      decrypt: 解密
+    sourceImage: 來源映像檔
+    cryptoOperation: 加密操作
+    warning:
+      uploading: |-
+        {count, plural,
+        =1 {1 個映像檔正在上傳，請勿重新整理或關閉頁面。}
+        other {{count} 個映像檔正在上傳，請勿重新整理或關閉頁面。}
+        }
+      osUpgrade:
+        uploading: "{name} 正在上傳，請勿重新整理或關閉頁面。"
+    checksum: 校驗和
+    checksumTip: 如果指定，則使用 SHA512 校驗和驗證映像檔。
+    tooltip:
+      imported: 由 vm-import-controller 自動建立
+
+  vmTemplate:
+    label: 範本
+    tabs:
+      basics: 基本資訊
+    nameNsDescription:
+      name: 範本名稱
+    tips:
+      notExistImage:
+        title: 映像檔 {name} 不存在！
+        message: 請選擇新的映像檔。
+      notExistNode:
+        title: 節點 {name} 不存在！
+        message: 請選擇新的節點。
+
+  upgradePage:
+    upgradeApp: 升級軟體
+    upgrade: 升級
+    upgradeTip: 請選擇您要升級到的版本
+    currentVersion: 目前版本
+    versionLabel: 可用的相容版本
+    enableLogging: 啟用日誌記錄
+    skipSingleReplicaDetachedVol: 跳過檢查單副本已分離磁碟區
+    upgradeNode: 升級節點中
+    upgradeSysService: 升級系統服務中
+    upgradeImage: 下載升級映像檔
+    osUpgrade: 叢集升級
+    uploadNew: 上傳新映像檔
+    deleteHeader: 請選擇要刪除的映像檔。
+    deleteExisting: 刪除現有映像檔
+    selectExisting: 選擇現有映像檔
+    createRepository: 建立升級存放庫中
+    succeeded: 已成功
+    releaseTip: 請仔細閱讀升級文件。您可以在 <a href="{url}" target="_blank">Harvester 版本說明</a>上查看詳細資訊。
+    checkReady: 我已閱讀並了解與此 Harvester 版本相關的升級指示。
+    pending: 待處理
+    upload:
+      duplicatedFile: 您嘗試上傳的檔案已存在。
+    repoInfo:
+      upgradeStatus: 升級狀態
+      os: 作業系統
+      kubernetes: Kubernetes
+      monitoringChart: 監控圖表
+      harvesterChart: Harvester 圖表
+      success: 成功
+      fail: 失敗
+      ongoing: 進行中
+      downloadLog: 下載日誌
+      logStatus: 日誌下載狀態
+    dismissMessage: 關閉
+    upgradeInfo:
+      warning: 警告
+      doc: 在開始升級程序之前，請閱讀<a href="{url}" target="_blank">文件</a>。確保您完成與您的環境和要升級到的版本相關的程序。
+      tip: 不符合系統需求和未正確執行的程序可能會造成完全升級失敗和其他需要手動解決的問題。
+      moreNotes: 有關版本說明的更多詳細資訊，請造訪 -
+
+  schedule:
+    label: 虛擬機器排程
+    createTitle: 建立排程
+    createButtonText: 建立排程
+    scheduleType: 虛擬機器排程類型
+    cron: Cron 排程
+    detail:
+      namespace: 命名空間
+      sourceVM: 來源虛擬機器
+    tabs:
+      basic: 基本資訊
+      backups: 備份
+      snapshots: 快照
+    message:
+      noSetting:
+        suffix: 才能建立備份排程
+    retain:
+      label: 保留
+      count: 數量
+      tooltip: 要保留的最新虛擬機器備份數量。最大值為 250，最小值為 2。
+    maxFailure:
+      label: 最大失敗次數
+      count: 數量
+      tooltip: 可容忍的連續失敗備份最大次數。如果達到此臨界值，Harvester 控制器將暫停排程作業。此值應小於保留數量
+    virtualMachine:
+      title: 虛擬機器名稱
+      placeholder: 選擇虛擬機器
+    type:
+      snapshot: 快照
+      backup: 備份
+
+  backup:
+    label: 虛擬機器備份
+    createText: 還原備份
+    title: 還原虛擬機器
+    refreshInterval:
+      label: 重新整理間隔
+      tip: 備份目標同步資料到 Harvester 叢集的間隔。設定為 0 以停用重新整理機制。
+    backupTargetTip: 用於存取備份儲存的端點。支援 NFS 和 S3。
+    message:
+      noSetting:
+        prefix: 您必須先設定備份目標
+        middle: 設定
+        suffix: 才能建立新備份。
+      errorTip:
+        prefix: 備份目標值在
+        middle: 設定中
+        suffix: 無效，錯誤：
+      viewSetting:
+        prefix: 點選
+        middle: 此處
+        suffix: 以檢視備份設定。
+      testConnect:
+        actionLabel: 測試連線
+        waitingLabel: 測試連線中...
+        successLabel: 連線測試完成
+        successMessage: Harvester 可以成功連線到端點 {endpoint}
+    restore:
+      backup: 備份
+      deletePreviousVolumes: 刪除先前的磁碟區
+      createNew: 建立新的
+      replaceExisting: 取代現有的
+      virtualMachineName: 虛擬機器名稱
+      keepMacAddress: 保留 MAC 位址
+    matchTarget: 目前的備份目標與現有的不符。
+    progress:
+      details: 磁碟區詳細資訊
+      tooltip:
+        starting: 備份開始中
+        progress: 備份進行中
+        complete: 備份已完成
+  restore:
+    progress:
+      details: 磁碟區詳細資訊
+      tooltip:
+        starting: 還原開始中
+        progress: 還原進行中
+        complete: 還原已完成
+
+  subnet:
+    cidrBlock:
+      tooltip: CIDR 表示法中的子網路範圍。請注意，相同 VPC 內不同子網路的 CIDR 區塊不能重疊。
+      label: CIDR 區塊
+      placeholder: 例如 172.20.0.0/16
+    protocol:
+      label: 通訊協定
+    provider:
+      tooltip: 此子網路的網路供應程式。必須是 OverlayNetwork 類型的虛擬機器網路之一。
+      label: 供應程式
+    vpc:
+      label: 虛擬私有雲
+    gateway:
+      label: 閘道 IP
+      placeholder: 例如 172.20.0.1
+    private:
+      label: 私有子網路
+      tooltip: 為此子網路啟用網路隔離。啟用後，虛擬機器只能在此子網路內通訊，即使相同 VPC 下存在其他子網路。
+    allowSubnet:
+      label: 允許的子網路
+      tooltip: 您可以指定某些可以與此子網路通訊的子網路。
+      addSubnet: 新增允許的子網路
+      placeholder: 例如 172.16.0.0/16
+    excludeIPs:
+      tooltip: 要從自動指派中保留的 IP 位址清單。閘道 IP 位址始終被排除，並將自動新增到清單中。
+
+  vpc:
+    noAddonEnabled:
+      prefix: kubeovn-operator 附加元件未啟用，點選
+      middle: 此處
+      suffix: 以啟用附加元件來成功建立 VPC 和子網路。
+    label: 虛擬私有雲
+    noChild: 此虛擬私有雲中沒有定義子網路。
+    createSubnet: 建立子網路
+    staticRoutes:
+      label: 靜態路由
+      cidr:
+        label: CIDR
+        placeholder: 例如 172.16.0.0/16
+      nextHopIP:
+        tooltip: 對等 VPC 另一端的 localConnectIP。
+        label: 下一躍點 IP
+        placeholder: 例如 169.254.0.2
+    vpcPeerings:
+      label: VPC 對等
+      localConnectIP:
+        tooltip: VPC 對等端點在 CIDR 表示法中的指定 IP 位址。請注意，兩個 IP 位址（VPC 和其他 VPC）應屬於相同子網路範圍，且不應與任何現有子網路中的 cidrBlock 衝突。
+        label: 本機連線 IP
+        placeholder: 例如 169.254.0.1/16
+      remoteVpc:
+        label: 遠端 VPC
+  network:
+    label: 虛擬機器網路
+    tabs:
+      basics: 基本資訊
+      layer3Network: 路由
+    clusterNetwork:
+      label: 叢集網路
+      create: 建立新的叢集網路
+      toolTip: 定義您的自訂叢集範圍網路名稱
+      createPlaceholder: 輸入新的叢集網路名稱
+      selectOrCreatePlaceholder: 選擇或建立新的叢集網路
+      selectPlaceholder: 選擇叢集網路
+    layer3Network:
+      mode:
+        label: 模式
+        auto: 自動（DHCP）
+        manual: 手動
+      serverIPAddr:
+        label: DHCP 伺服器 IP
+      gateway:
+        label: 閘道
+        placeholder: 例如 172.16.0.1
+      cidr:
+        label: CIDR
+        placeholder: 例如 172.16.0.1/24
+  sshKey:
+    label: SSH 金鑰
+    keypair: SSH 金鑰
+    tabs:
+      basics: 基本資訊
+
+  setting:
+    label: 設定
+    tabs:
+      advanced: 進階
+      ui: 使用者介面
+    validation:
+      physicalNIC: DefaultPhysicalNIC
+    placeholder:
+      accessKeyId: 指定您的存取金鑰 ID
+      secretAccessKey: 指定您的密鑰存取金鑰
+      cert: 上傳自簽 SSL 憑證
+    noSearchMatch: 沒有設定符合您的搜尋。
+    vlanChangeTip: 新修改的預設網路介面僅適用於新增的節點，不適用於現有節點。
+    defaultPhysicalNIC: 預設網路介面
+    modifiedMessage: 已從預設設定自訂的設定會標記為「已修改」。
+    percentTip: 括號中的值代表所有主機上網路介面的分佈百分比。如果選擇的介面小於 100%，使用者需要在 VLAN 網路設定失敗的主機上手動指定網路介面。
+    message:
+      ca:
+        prefix: 點選
+        middle: 此處
+        suffix: 以新增自訂憑證。
+    sslCertificates:
+      publicCertificate: 公開憑證
+      privateKey: 私密金鑰
+      ca: CA
+    rancherCluster:
+      kubeConfig: Rancher KubeConfig
+      removeUpstreamClusterWhenNamespaceIsDeleted: 刪除命名空間時移除上游叢集
+    storageNetwork:
+      range:
+        placeholder: 例如 172.16.0.0/24
+        label: IP 範圍
+        invalid: 「範圍」無效。
+      clusterNetwork: 叢集網路
+      vlan: VLAN ID
+      exclude:
+        label: 排除 IP
+        placeholder: 例如 172.16.0.1
+        invalid: 「排除清單」無效。
+        addIp: 新增排除 IP
+      warning: 警告：<br/> 任何對 storage-network 的變更都需要在套用此設定之前關閉所有虛擬機器。<br/> 使用者必須確保已設定叢集網路，且 VLAN 設定將涵蓋所有節點，並確保所有節點中的網路連線正常運作且符合預期。
+      tip: 以 IPv4 CIDR 格式指定 IP 範圍。<code>所需 IP 數量 = 節點數量 * 2 + 磁碟數量 * 2 + 要下載/上傳的映像檔數量</code>。有關儲存網路設定的更多資訊，請參閱<a href="{url}" target="_blank">文件</a>。
+    vmForceDeletionPolicy:
+      period: 期間
+    vmMigrationNetwork:
+      parseError: 解析現有設定失敗。
+      fetchError: 載入所需網路資源失敗：{error}。請重新整理頁面或稍後再試。
+      clusterNetwork: 叢集網路
+      vlan: VLAN ID
+      range:
+        placeholder: 例如 172.16.0.0/24
+        label: IP 範圍
+        invalid: 「範圍」無效。
+      exclude:
+        label: 排除的 IP
+        placeholder: 例如 172.16.0.1/32
+        invalid: 「排除清單」無效。
+        addButton: 新增排除 IP
+    ratio: 比率
+    autoRotateRKE2Certs:
+      expiringInHours: 到期時間
+    httpProxy:
+      warning: 警告：<br/> 如果您設定「http-proxy」和「https-proxy」，您還必須將 Harvester 節點的 CIDR 放入「no-proxy」，否則 Harvester 叢集將會損壞。
+    supportBundleImage:
+      imagePullPolicy: 拉取政策
+      repo: 存放庫
+      tag: 標籤
+    csiDriverConfig:
+      provisioner: 供應程式
+      volumeSnapshotClassName: 磁碟區快照類別名稱
+      backupVolumeSnapshotClassName: 備份磁碟區快照類別名稱
+    csiOnlineExpandValidation:
+      provisioner: 供應程式
+      value: 值
+      invalidJsonFormat: 設定值不是有效的 JSON 格式：{error}
+      failedToLoadDrivers: 載入 CSI 驅動程式失敗。錯誤：{error}
+    containerdRegistry:
+      mirrors:
+        mirrors: 鏡像
+        registryName: 登錄名稱
+        endpoints: 端點
+        rewrite:
+          rewrite: 重寫
+          addRewrite: 新增重寫
+        addMirror: 新增鏡像
+      configs:
+        configs: 設定
+        registryEDQNorIP: 登錄 FDQN 或 IP
+        registryPlaceholder: myregistry.local:5000
+        username: 使用者名稱
+        password: 密碼
+        auth: 驗證
+        identityToken: 身分權杖
+        insecureSkipVerify: InsecureSkipVerify
+        addConfig: 新增設定
+
+    upgrade:
+      unknownImageName: 找不到映像檔名稱。
+      imageUrl: 請輸入有效的映像檔 URL。
+      chooseFile: 請選擇要上傳的映像檔。
+      checksum: 校驗和
+      networkError: 無法上傳映像檔。解決可能發生的網路問題後重試。
+      cancelUpload: 已取消映像檔上傳。
+      uploadSuccess: "{name} 已成功上傳。按下升級按鈕以開始叢集升級程序。"
+      deleteImage: 請選擇要刪除的映像檔。
+      deleteSuccess: "{name} 已成功刪除。"
+      imagePreloadStrategy: 映像檔預載策略
+      restoreVM: 還原虛擬機器
+      strategyType: 策略類型
+      concurrency: 並行
+    harvesterMonitoring:
+      label: Harvester 監控
+      section:
+        prometheus: Prometheus
+        prometheusNodeExporter: Prometheus 節點匯出器
+        grafana: Grafana
+        alertmanager: Alertmanager
+      tips:
+        scrape: 連續抓取之間的間隔
+        evaluation: 連續評估之間的間隔
+        retention: 保留指標的時間
+        retentionSize: 指標的最大大小
+    clusterRegistrationUrl:
+      message: 要完全取消設定匯入的 Harvester 叢集，請也在 Rancher 儀表板使用者介面上透過 <code>虛擬化管理</code>頁面將其移除。
+    ntpServers:
+      isNotIPV4: 您輸入的位址不是 IPv4 或主機。請輸入有效的 IPv4 位址或主機位址。
+      isDuplicate: 有重複的 NTP 伺服器設定。
+  cloudTemplate:
+    label: 雲端設定範本
+    templateType: 範本類型
+    userData: 使用者資料
+    networkData: 網路資料
+
+  support:
+    title: Harvester 支援
+    kubeconfig:
+      title: 下載 KubeConfig
+      titleDescription: 下載 kubeconfig 以進行除錯。
+    internal:
+      rancher:
+        title: 存取內嵌的 Rancher 使用者介面
+        titleDescription: 您只能使用內嵌的 Rancher 使用者介面進行除錯和驗證。有關 Harvester 如何與 Rancher 整合的更多資訊，請參閱<a target="_blank" href="{url}" rel="noopener noreferrer nofollow">文件</a>。
+      longhorn:
+        title: 存取內嵌的 Longhorn 使用者介面
+        titleDescription: 我們僅支援使用內嵌的 Longhorn 使用者介面進行除錯和驗證。
+    community:
+      learnMore: 深入了解 SUSE Harvester 支援
+      pricing: 聯絡我們以了解定價
+
+  namespace:
+    label: 命名空間
+
+  projectNamespace:
+    label: 專案/命名空間
+
+  vip:
+    namespace:
+      label: 命名空間
+    cidr:
+      label: CIDR/IP 範圍
+      invalid: 「CIDR/IP 範圍」無效。
+      toolTip: 我們可以透過逗號分隔來套用多個集區或範圍。例如：192.168.0.200/30,192.168.0.200/29 或 192.168.0.10-192.168.0.11
+    add:
+      label: 新增 IP 集區
+
+  sslParameters:
+    protocols:
+      label: 通訊協定
+    ciphers:
+      label: 加密
+
+  monitoring:
+    configuration:
+      label: 設定
+    alertmanagerConfig:
+      label: Alertmanager 設定
+      diabledMonitoringTips:
+        prefix: 先啟用
+        middle: 監控
+        suffix: 附加元件。
+      diabledAlertingTips:
+        prefix: 啟用
+        middle: Alertmanager
+        suffix: 以使設定生效。
+      disabledAddon:
+        prefix: 監控附加元件已停用，點選
+        middle: 此處
+        suffix: 以啟用它。
+
+  logging:
+    configuration:
+      section:
+        fluentbit: Fluentbit
+        fluentd: Fluentd
+    clusterFlow:
+      label: 叢集流程
+    clusterOutput:
+      label: 叢集輸出
+    flow:
+      label: 流程
+    output:
+      label: 輸出
+    diabledTips:
+        prefix: 啟用
+        middle: 日誌記錄
+        suffix: 以使設定生效。
+
+  snapshot:
+    totalSnapshotSize: 快照總大小
+    label: 磁碟區快照
+    targetVolume: 原始磁碟區
+    size: 大小
+    image: 映像檔
+
+  vmSnapshot:
+    label: 虛擬機器快照
+    createText: 還原快照
+    snapshot: 快照
+
+  storage:
+    label: 儲存
+    useDefault: 使用預設儲存
+    volumeEncryption: 磁碟區加密
+    secret: 密鑰
+    migratable:
+      label: 可遷移
+    numberOfReplicas:
+      label: 副本數量
+    staleReplicaTimeout:
+      label: 過期副本逾時
+    nodeSelector:
+      label: 主機選擇器
+    diskSelector:
+      label: 磁碟選擇器
+    storageClass:
+      label: 儲存類別
+      longhorn:
+        v1:
+          label: Longhorn V1（CSI）
+        v2:
+          label: Longhorn V2（CSI）
+        versionTooltip: 此節點已停用 Longhorn V2。
+      lvm:
+        label: LVM
+    title: 儲存類別
+    customize:
+      volumeBindingMode:
+        later: 在建立使用 PersistentVolumeClaim 的虛擬機器後，繫結並佈建持久磁碟區
+    parameters:
+      numberOfReplicas:
+        label: 副本數量
+      staleReplicaTimeout:
+        label: 過期副本逾時
+      diskSelector:
+        label: 磁碟選擇器
+        no-options: 沒有可用的標籤，請在「主機 > 儲存」頁面中新增
+      nodeSelector:
+        label: 節點選擇器
+        no-options: 沒有可用的標籤，請在「主機 > 儲存」頁面中新增
+      migratable:
+        label: 可遷移
+      lvmVolumeGroupType:
+        label: 磁碟區群組類型
+      lvmVolumeGroup:
+        label: 磁碟區群組名稱
+        no-options: 沒有可用的磁碟區群組，請在「主機 > 儲存」頁面中新增
+      node:
+        label: 節點
+    allowedTopologies:
+      title: 允許的拓撲
+      tooltip: 允許的拓撲有助於在符合以下所有表達式的主機上排程虛擬機器。
+    internal:
+      label: 內部儲存類別
+      cannotDeleteTooltip: 無法刪除內部儲存類別磁碟區
+      cannotDeleteOrDefaultTooltip: 無法刪除內部儲存類別或將其設定為預設
+    cdiSettings:
+      label: CDI 設定
+      volumeModeAccessModes:
+        label: 磁碟區模式 / 存取模式
+        tooltip: 指定預設磁碟區模式和存取模式。
+        add: 新增
+        volumeMode: 磁碟區模式
+        accessModes:
+          label: 存取模式
+      volumeSnapshotClass:
+        label: 磁碟區快照類別
+        tooltip: 設定在此 StorageClass 下建立 PVC 快照時要使用的磁碟區快照類別名稱。
+      cloneStrategy:
+        label: 複製策略
+        tooltip: 定義用於使用此 StorageClass 建立的磁碟區的複製策略。
+        copy: 複製
+        snapshot: 快照
+        csiClone: CSI 複製
+      fileSystemOverhead:
+        label: 檔案系統額外負荷
+        tooltip: 指定在計算 PVC 大小時要考慮的檔案系統額外負荷百分比。
+        placeholder: 例如 0.05（最多 3 位小數，介於 0 和 1 之間）
+
+  vlanConfig:
+    title: 網路設定
+    createNetworkConfig: 建立網路設定
+    action:
+      migrate: 遷移
+    titles:
+      nodeSelector: 節點選擇器
+      uplink: 上行鏈路
+      bondOptions: 繫結選項
+      attributes: 屬性
+      host: 選定的主機
+    scheduling:
+      affinity:
+        allNodes: 選擇所有節點
+        specificNode: 選擇特定節點
+        schedulingRules: 選擇符合規則的節點
+    uplink:
+      nics:
+        label: 網路介面卡
+        addLabel: 新增網路介面卡
+        placeholder: 選擇在所有選定節點上可用的網路介面卡
+        validate:
+          available: 網路介面卡「{nic}」在選定的節點上不可用
+      linkAttributes:
+        mtu:
+          label: MTU
+      bondOptions:
+        mode:
+          label: 模式
+        miimon:
+          label: Miimon
+          tooltip: Miimon 以毫秒為單位指定 MII 連結監控頻率。<Code>-1</Code> 表示保留原始值。
+    nodeSelector:
+      matchingNodes:
+        matchesSome: |-
+          {matched, plural,
+            =0 {符合 {total, number} 個節點中的 0 個。}
+            =1 {符合 {total, number} 個節點中的 1 個：「{sample}」}
+            other {符合 {total, number} 個現有節點中的 {matched, number} 個，包括「{sample}」}
+          }
+
+  vlanStatus:
+    vlanConfig:
+      label: 網路設定
+
+  clusterNetwork:
+    title: 叢集網路設定
+    create:
+      button:
+        label: 建立叢集網路
+    clusterNetwork: 沒有定義網路設定。
+    mgmt: mgmt 是內建的叢集管理網路，不支援任何其他網路設定。
+    notExist: 叢集網路「{ clusterNetwork }」不存在
+    notReady: 叢集網路「{ clusterNetwork }」未就緒
+
+  addons:
+    descriptions:
+      'harvester-system/vm-import-controller': vm-import-controller 是一個附加元件，可協助將虛擬機器工作負載從其他來源叢集遷移到現有的 Harvester 叢集。
+      'harvester-system/pcidevices-controller': pcidevices-controller 是一個附加元件，可協助探索叢集中節點的 PCI 裝置，並允許使用者準備裝置以進行 PCI 穿透，以與 Harvester 虛擬機器和客體叢集搭配使用。
+      'cattle-logging-system/rancher-logging': rancher-logging 是一個附加元件，可從 Harvester 叢集收集各種日誌、事件和稽核，並根據流程將它們路由到多種伺服器。
+      'harvester-system/rancher-vcluster': rancher-vcluster 部署已安裝 Rancher 的虛擬叢集（vcluster）。
+      'cattle-monitoring-system/rancher-monitoring': rancher-monitoring 是一個附加元件，可收集 Harvester 叢集和虛擬機器指標，並允許您在內嵌儀表板上檢視指標並將警示傳送到遠端伺服器。
+      'vm-import-controller': vm-import-controller 是一個附加元件，可協助將虛擬機器工作負載從其他來源叢集遷移到現有的 Harvester 叢集。
+      'pcidevices-controller': pcidevices-controller 是一個附加元件，可協助探索叢集中節點的 PCI 裝置，並允許使用者準備裝置以進行 PCI 穿透，以與 Harvester 虛擬機器和客體叢集搭配使用。
+      'nvidia-driver-toolkit': nvidia-driver-toolkit 是一個附加元件，可啟用 vGPU 裝置並將它們指派給 Harvester 虛擬機器。
+      'rancher-logging': rancher-logging 是一個附加元件，可從 Harvester 叢集收集各種日誌、事件和稽核，並根據流程將它們路由到多種伺服器。
+      'rancher-monitoring': rancher-monitoring 是一個附加元件，可收集 Harvester 叢集和虛擬機器指標、在內嵌儀表板上檢視它們，並將警示傳送到遠端伺服器。
+      'rancher-vcluster': rancher-vcluster 部署已安裝 Rancher 的虛擬叢集（vcluster）。
+      'harvester-seeder': harvester-seeder 是一個附加元件，使用 IPMI 和 Redfish 來探索硬體資訊並執行頻外操作。
+      'harvester-system/harvester-seeder': harvester-seeder 是一個附加元件，使用 IPMI 和 Redfish 來探索硬體資訊並執行頻外操作。
+      'harvester-csi-driver-lvm': harvester-csi-driver-lvm 是一個附加元件，允許使用者透過使用本機裝置的 LVM 建立 PVC。
+    vmImport:
+      titles:
+        basic: 基本資訊
+        pvc: 磁碟區
+    rancherVcluster:
+      accessRancher: 存取 Rancher 儀表板
+      hostname: 主機名稱
+      rancherVersion: Rancher 版本
+      password: 引導密碼
+    switchFailed: "{action} {name} 失敗！"
+    nvidiaDriverToolkit:
+      titles:
+        basic: 控制器
+        image: 映像檔
+        driver: 驅動程式
+      image:
+        tag: 映像檔標籤
+        repository: 映像檔存放庫
+      driver:
+        location: 驅動程式位置
+      parsingSpecError:
+        欄位「spec.valuesContent」格式無效。
+    usbController:
+      titles:
+        basic: 基本資訊
+
+  loadBalancer:
+    label: 負載平衡器
+    tabs:
+      basic: 基本資訊
+      listeners: 監聽器
+      healthCheck: 健康狀態檢查
+      backendServer: 後端伺服器選擇器
+    workloadType:
+      label: 工作負載類型
+      options:
+        cluster: 客體 Kubernetes 叢集
+        vm: 虛擬機器
+    ipam:
+      label: IPAM
+      options:
+        dhcp: DHCP
+        pool: 集區
+    ipPool:
+      label: IP 集區
+      options:
+        none: 自動（自動選擇 IP 集區）
+    listeners:
+      name:
+        label: 名稱
+      protocol:
+        label: 通訊協定
+      port:
+        label: 連接埠
+      backendPort:
+        label: 後端連接埠
+        placeholder: 例如 80
+    backendServerSelector:
+      matchingVMs:
+        matchesSome: |-
+          {matched, plural,
+            =0 {符合負載平衡器所在命名空間中 {total, number} 個虛擬機器中的 0 個。}
+            =1 {符合負載平衡器所在命名空間中 {total, number} 個虛擬機器中的 1 個：「{sample}」}
+            other {符合負載平衡器所在命名空間中 {total, number} 個現有虛擬機器中的 {matched, number} 個，包括「{sample}」}
+          }
+    backendServers:
+      label: 後端伺服器
+    healthCheck:
+      warning:
+        portInUse: 警告，健康狀態檢查設定中正在使用後端連接埠 {port}。如果您需要更新連接埠，請相應地更新健康狀態檢查設定。
+
+  ipPool:
+    label: IP 集區
+    network:
+      label: 虛擬機器網路
+    tabs:
+      range: 範圍
+      scope: 範圍
+      selector: 選擇器
+    subnet:
+      label: 子網路
+    startIP:
+      label: 起始 IP
+    endIP:
+      label: 結束 IP
+    gateway:
+      label: 閘道
+    namespace:
+      label: 命名空間
+    project:
+      label: 專案
+    guestCluster:
+      label: 客體 Kubernetes 叢集
+    availableIP:
+      label: 可用 IP 數量
+    scope:
+      label: 範圍
+      addLabel: 新增範圍
+    priority:
+      label: 優先順序
+    cidr:
+      addLabel: 新增 CIDR
+    range:
+      addLabel: 新增範圍
+
+  service:
+    healthCheckPort:
+      label: 健康狀態檢查連接埠
+    healthCheckSuccessThreshold:
+      label: 健康狀態檢查成功臨界值
+      description: 如果探測連續成功檢測到位址的次數達到成功臨界值，則後端伺服器可以開始轉送流量。
+    healthCheckFailureThreshold:
+      label: 健康狀態檢查失敗臨界值
+      description: 如果健康狀態檢查失敗次數達到失敗臨界值，後端伺服器將停止轉送流量。
+    healthCheckPeriod:
+      label: 健康狀態檢查期間
+    healthCheckTimeout:
+      label: 健康狀態檢查逾時
+    healthCheckEnabled:
+      label: 健康狀態檢查
+
+  secret:
+    label: 密鑰
+
+  sriov:
+    label: SR-IOV 網路裝置
+    nodeName: 節點
+    numVFs: 虛擬功能數量
+    vfAddresses: 虛擬功能位址
+    showMore: 顯示更多
+    parentSriov: 依父 SR-IOV 篩選
+
+  sriovgpu:
+    label: SR-IOV GPU 裝置
+    nodeName: 節點
+    numVFs: 虛擬功能數量
+    vfAddresses: 虛擬功能位址
+    vGpuDevices: vGPU 裝置
+    showMore: 顯示更多
+    parentSriov: 依父 SR-IOV GPU 篩選
+    noPermission: 請聯絡系統管理員以先新增 Harvester 附加元件。
+    goSetting:
+      prefix: nvidia-driver-toolkit 附加元件未啟用，點選
+      middle: 此處
+      suffix: 以啟用它來管理您的 SR-IOV GPU 裝置。
+
+  vgpu:
+    label: vGPU 裝置
+    noPermission: 請聯絡系統管理員以先新增 Harvester 附加元件。
+    goSetting:
+      prefix: nvidia-driver-toolkit 附加元件未啟用，點選
+      middle: 此處
+      suffix: 以啟用它來管理您的 vGPU 裝置。
+    enableGroup: 啟用群組
+    disableGroup: 停用群組
+    enable:
+      title: 選擇 vGPU
+      type: 類型
+    available: 可用裝置
+    compatibleNodes: 相容節點
+    impossibleSelection: 沒有主機擁有所有選定的裝置。
+    howToUseDevice: 使用下表啟用您想要在此虛擬機器中使用的 vGPU 裝置。
+    deviceInTheSameHost: 您只能選擇同一主機上的裝置。
+
+  usb:
+    label: USB 裝置
+    noPermission: 請聯絡系統管理員以先新增 Harvester 附加元件
+    goSetting:
+      prefix: pcidevices-controller 附加元件未啟用，點選
+      middle: 此處
+      suffix: 以啟用它來管理您的 USB 裝置。
+    enableGroup: 啟用群組
+    disableGroup: 停用群組
+    available: 可用的 USB 裝置
+    compatibleNodes: 相容節點
+    impossibleSelection: 沒有主機擁有所有選定的裝置。
+    howToUseDevice: 使用下表在您想要在此虛擬機器中使用的每個裝置上啟用 USB 穿透。
+    deviceInTheSameHost: 您只能選擇同一主機上的裝置。
+    showCompatibility: 顯示裝置相容性矩陣
+    hideCompatibility: 隱藏裝置相容性矩陣
+    claimError: 在 {name} 上啟用穿透時發生錯誤
+    unclaimError: 在 {name} 上停用穿透時發生錯誤
+    cantUnclaim: 您無法停用其他使用者所宣告的裝置穿透。
+    enablePassthroughWarning: 如果裝置路徑在以下情況下變更，請重新啟用 USB 裝置：<br/>&nbsp1）重新插入 USB 裝置。<br/>&nbsp2）重新開機節點。<br/><br/>不正確的裝置路徑可能會導致穿透失敗。
+
+  harvesterVlanConfigMigrateDialog:
+    targetClusterNetwork:
+      label: 目標叢集網路
+      placeholder: 選擇目標叢集網路
+
+  seeder:
+    banner:
+      enable:
+        prefix: 「harvester-seeder」附加元件已停用。
+        middle: 點選此處
+        suffix: 以啟用它。
+      noAccess: 請聯絡系統管理員以先啟用頻外存取。
+      noAddon: 「harvester-seeder」附加元件不存在，請檢查是否已安裝。
+      noInventory: 等待「inventories.metal.harvesterhci.io」就緒。
+    inventory:
+      host:
+        label: 主機
+        placeholder: 例如 172.16.1.1
+      port:
+        label: 連接埠
+        placeholder: 例如 623
+      insecureTLS:
+        label: 不安全的 TLS
+      secret:
+        label: 密鑰
+        create:
+          title: 新增密鑰
+      event:
+        label: 事件
+      pollingInterval:
+        label: 輪詢間隔
+
+typeDescription:
+  # Map of
+  # type: Description to be shown on the top of list view describing the type.
+  #       Should fit on one line.
+  #       If you link to anything external, it MUST have
+  #       target="_blank" rel="noopener noreferrer nofollow"
+  harvester: 品牌化允許管理員透過自訂 Harvester 產品名稱、標誌和配色方案來全面重新品牌化使用者介面。
+
+advancedSettings:
+  experimental: 實驗性功能允許使用者在正式支援的版本之前測試和評估早期存取功能
+  descriptions:
+    'harv-vlan': VLAN 網路的預設網路介面名稱。
+    'harv-backup-target': 用於儲存虛擬機器備份的自訂備份目標。
+    'branding': 品牌化允許管理員透過自訂 Harvester 產品名稱、標誌和配色方案來全面重新品牌化使用者介面。
+    'harv-csi-driver-config': 為 CSI 驅動程式設定其他資訊。
+    'harv-csi-online-expand-validation': 允許特定 CSI 驅動程式的線上磁碟區擴充。
+    'harv-containerd-registry': Containerd 登錄設定以連線到私有登錄。
+    'harv-log-level': 設定 Harvester 伺服器日誌層級。預設為資訊。
+    'harv-server-version': Harvester 伺服器版本。
+    'harv-upgrade-checker-enabled': 指定是否啟用 Harvester 升級檢查。預設為 True。
+    'harv-upgrade-checker-url': 預設 Harvester 升級檢查 URL。僅在 <code>upgrade-checker-enabled</code> 等於 True 時使用。
+    'harv-ui-source': 設定如何載入使用者介面來源。
+    'harv-ui-index': 使用者介面的 HTML 索引位置。
+    'harv-ui-plugin-index': Harvester 外掛程式使用者介面的 JS 索引位置。
+    'harv-cluster-registration-url': 多叢集管理的註冊 URL。
+    'harv-http-proxy': Harvester 存取外部服務的 HTTP 代理。
+    'harv-additional-ca': 用於 TLS 驗證的自訂 CA 根憑證。
+    'harv-overcommit-config': 資源過度配置設定。
+    'harv-support-bundle-timeout': 以分鐘為單位的支援包逾時設定，使用 0 以停用逾時。
+    'harv-support-bundle-expiration': 以分鐘為單位的支援包過期設定。
+    'harv-support-bundle-node-collection-timeout': 以分鐘為單位的支援包節點收集逾時設定。
+    'harv-vm-force-reset-policy': 當虛擬機器卡在故障節點上時強制重設操作的設定。
+    'harv-ssl-parameters': 用於 TLS 驗證的自訂 SSL 參數。
+    'harv-storage-network': Longhorn storage-network 設定。
+    'harv-support-bundle-namespaces': 選擇要包含在支援包中的其他命名空間。
+    'harv-auto-disk-provision-paths': 指定 Harvester 將自動新增為虛擬機器儲存的磁碟（使用 glob 模式）。
+    'harv-support-bundle-image': 支援包映像檔設定。在 <a href="https://hub.docker.com/r/rancher/support-bundle-kit/tags" target="_blank">rancher/support-bundle-kit</a> 中尋找不同版本。
+    'harv-release-download-url': 此設定允許您設定 <code>升級版本下載</code> URL 位址。Harvester 將從設定的 URL 託管的（<code>$URL</code>/<code>$VERSION</code>/version.yaml）檔案中取得 ISO URL 和校驗和值。
+    'harv-default-vm-termination-grace-period-seconds': 設定虛擬機器停止的虛擬機器終止寬限期。
+    'harv-ntp-servers': 設定 NTP 伺服器。您可以設定多個 IPv4 位址或主機位址。
+    'harv-auto-rotate-rke2-certs': 憑證輪替機制依賴 Rancher。Harvester 將自動更新憑證產生以觸發輪替。
+    'harv-kubeconfig-default-token-ttl-minutes': 套用於 Harvester 管理 kubeconfig 檔案的 TTL（以分鐘為單位）。預設為 0，表示永不過期。
+    'harv-longhorn-v2-data-engine-enabled': 啟用 Longhorn V2 資料引擎。預設為 false。<ul><li>變更此設定將在所有節點上重新啟動 RKE2。這不會影響執行中的虛擬機器工作負載。</li><li>如果在啟用此設定時看到「hugepages-2Mi 容量不足」錯誤，請稍候一分鐘等待錯誤清除。如果錯誤持續存在，請重新開機受影響的節點。</li></ul>
+    'harv-additional-guest-memory-overhead-ratio': kubevirt 調整虛擬機器額外負荷記憶體的比率。此值可以是零、空值或介於 1.0 和 10.0 之間的浮點數，預設為 1.5。
+    'harv-upgrade-config': 設定升級的映像檔預載和虛擬機器還原選項。請參閱 <a href="{url}" target="_blank" rel="noopener">settings/upgrade-config</a> 中的相關欄位
+    'harv-vm-migration-network': 虛擬機器遷移流量的隔離網路。
+    'harv-rancher-cluster': 設定 Rancher 叢集整合設定以進行客體叢集管理。
+    'harv-max-hotplug-ratio': kubevirt 限制可以熱插拔到虛擬機器的最大 CPU 和記憶體的比率。此值可以是介於 1 和 20 之間的整數，預設為 4。
+
+typeLabel:
+  kubevirt.io.virtualmachine: |-
+    {count, plural,
+      one { 虛擬機器 }
+      other { 虛擬機器 }
+    }
+  harvesterhci.io.virtualmachineimage: |-
+    {count, plural,
+      one { 映像檔 }
+      other { 映像檔 }
+    }
+  harvesterhci.io.keypair: |-
+    {count, plural,
+      one { SSH 金鑰 }
+      other { SSH 金鑰 }
+    }
+  harvesterhci.io.host: |-
+    {count, plural,
+      one { 主機 }
+      other { 主機 }
+    }
+  harvesterhci.io.networkattachmentdefinition: |-
+    {count, plural,
+      one { 虛擬機器網路 }
+      other { 虛擬機器網路 }
+    }
+  harvesterhci.io.volume: |-
+    {count, plural,
+      one { 磁碟區 }
+      other { 磁碟區 }
+    }
+  harvesterhci.io.user: |-
+    {count, plural,
+      one { 使用者 }
+      other { 使用者 }
+    }
+  harvesterhci.io.setting: |-
+    {count, plural,
+      one { 設定 }
+      other { 設定 }
+    }
+  harvesterhci.io.virtualmachinetemplateversion: |-
+    {count, plural,
+      one { 範本 }
+      other { 範本 }
+    }
+  harvesterhci.io.schedulevmbackup: |-
+    {count, plural,
+      one { 虛擬機器排程 }
+      other { 虛擬機器排程 }
+    }
+  harvesterhci.io.virtualmachinebackup: |-
+    {count, plural,
+      one { 虛擬機器備份 }
+      other { 虛擬機器備份 }
+    }
+  kubeovn.io.vpc: |-
+    {count, plural,
+      one { 虛擬私有雲 }
+      other { 虛擬私有雲 }
+    }
+  harvesterhci.io.cloudtemplate: |-
+    {count, plural,
+      one { 雲端設定範本 }
+      other { 雲端設定範本 }
+    }
+  harvesterhci.io.volumesnapshot: |-
+    {count, plural,
+      one { 磁碟區快照 }
+      other { 磁碟區快照 }
+    }
+  harvesterhci.io.vmsnapshot: |-
+    {count, plural,
+      one { 虛擬機器快照 }
+      other { 虛擬機器快照 }
+    }
+  network.harvesterhci.io.vlanconfig: |-
+    {count, plural,
+      one { 網路設定 }
+      other { 網路設定 }
+    }
+  harvesterhci.io.monitoring.alertmanagerconfig: |-
+    {count, plural,
+      one { Alertmanager 設定 }
+      other { Alertmanager 設定 }
+    }
+  harvesterhci.io.logging.clusterflow: |-
+    {count, plural,
+      one { 叢集流程 }
+      other { 叢集流程 }
+    }
+  harvesterhci.io.logging.clusteroutput: |-
+    {count, plural,
+      one { 叢集輸出 }
+      other { 叢集輸出 }
+    }
+  harvesterhci.io.logging.flow: |-
+    {count, plural,
+      one { 流程 }
+      other { 流程 }
+    }
+  harvesterhci.io.logging.output: |-
+    {count, plural,
+      one { 輸出 }
+      other { 輸出 }
+    }
+  harvesterhci.io.storage: |-
+    {count, plural,
+      one { 儲存類別 }
+      other { 儲存類別 }
+    }
+  devices.harvesterhci.io.pcidevice: |-
+    {count, plural,
+      one { PCI 裝置 }
+      other { PCI 裝置 }
+    }
+  persistentvolumeclaim: |-
+    {count, plural,
+      one { 磁碟區 }
+      other { 磁碟區 }
+    }
+  network.harvesterhci.io.clusternetwork: |-
+    {count, plural,
+      one { 叢集網路 }
+      other { 叢集網路 }
+    }
+  harvesterhci.io.addon: |-
+    {count, plural,
+      one { 附加元件 }
+      other { 附加元件 }
+    }
+  devices.harvesterhci.io.sriovnetworkdevice: |-
+    {count, plural,
+      one { SR-IOV 網路裝置 }
+      other { SR-IOV 網路裝置 }
+    }
+
+  devices.harvesterhci.io.sriovgpudevice: |-
+    {count, plural,
+      one { SR-IOV GPU 裝置 }
+      other { SR-IOV GPU 裝置 }
+    }
+
+  devices.harvesterhci.io.vgpudevice: |-
+    {count, plural,
+      one { vGPU 裝置 }
+      other { vGPU 裝置 }
+    }
+
+  harvesterhci.io.secret: |-
+    {count, plural,
+      one { 密鑰 }
+      other { 密鑰 }
+    }
+  harvesterhci.io.blockdevice: |-
+    {count, plural,
+      one { 磁碟 }
+      other { 磁碟 }
+    }
+  loadbalancer.harvesterhci.io.loadbalancer: |-
+    {count, plural,
+      one { 負載平衡器 }
+      other { 負載平衡器 }
+    }
+  loadbalancer.harvesterhci.io.ippool: |-
+    {count, plural,
+      one { IP 集區 }
+      other { IP 集區 }
+    }

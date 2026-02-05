@@ -51,6 +51,8 @@ jobs:
       GIT_USER_EMAIL: service@jetsion.com
       GIT_USER_NAME: github-actions[bot]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Clone Or Update Repo
         shell: bash
         run: |
@@ -103,6 +105,8 @@ jobs:
       GIT_USER_EMAIL: service@jetsion.com
       GIT_USER_NAME: github-actions[bot]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Clone Or Update Repo
         shell: bash
         run: |
@@ -149,6 +153,8 @@ jobs:
       GIT_USER_EMAIL: service@jetsion.com
       GIT_USER_NAME: github-actions[bot]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Clone Or Update Repo
         shell: bash
         run: |

@@ -1,0 +1,202 @@
+name: Harvester UI Extension Build
+
+on:
+  push:
+    branches:
+      - 'release-*'
+  pull_request:
+    branches:
+      - 'release-*'
+  workflow_dispatch:
+    inputs:
+      harvester_version:
+        description: "HARVESTER_VERSION"
+        required: false
+      harvester_repo:
+        description: "HARVESTER_REPO"
+        required: false
+      harvester_github_user:
+        description: "HARVESTER_GITHUB_USER"
+        required: false
+
+env:
+  DEFAULT_HARVESTER_VERSION: "1.6.0"
+  DEFAULT_HARVESTER_REPO: "harvester"
+  DEFAULT_HARVESTER_GITHUB_USER: "wusung"
+
+jobs:
+  prepare_yarn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Corepack
+        shell: bash
+        run: corepack enable
+      - name: Prepare Yarn
+        shell: bash
+        run: corepack prepare yarn@1.22.22 --activate
+      - name: Cache Corepack
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/corepack
+          key: corepack-yarn-1.22.22
+
+  build:
+    runs-on: ubuntu-latest
+    needs: prepare_yarn
+    env:
+      HARVESTER_VERSION: ${{ inputs.harvester_version || env.DEFAULT_HARVESTER_VERSION }}
+      HARVESTER_REPO: ${{ inputs.harvester_repo || env.DEFAULT_HARVESTER_REPO }}
+      HARVESTER_GITHUB_USER: ${{ inputs.harvester_github_user || env.DEFAULT_HARVESTER_GITHUB_USER }}
+      HARVESTER_DIR: harvester-ui-extension
+      GIT_USER_EMAIL: service@jetsion.com
+      GIT_USER_NAME: github-actions[bot]
+    steps:
+      - name: Clone Or Update Repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -d "${HARVESTER_DIR}/.git" ]; then
+            git clone "https://github.com/wusung/harvester-ui-extension.git" "${HARVESTER_DIR}"
+          fi
+          (cd "${HARVESTER_DIR}" && git fetch --prune && git pull --ff-only)
+      - name: Restore Corepack Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/corepack
+          key: corepack-yarn-1.22.22
+      - name: Enable Corepack
+        shell: bash
+        run: corepack enable
+      - name: Install Dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
+          yarn --frozen-lockfile install
+      - name: Build Package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
+          yarn build-pkg harvester
+      - name: Publish Packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
+          yarn publish-pkgs -s wusung/harvester-ui-extension -b gh-pages -t harvester-${HARVESTER_VERSION}
+      - name: Upload dist-pkg
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-pkg-${{ env.HARVESTER_VERSION }}
+          path: harvester-ui-extension/dist-pkg
+
+  yarn_build:
+    runs-on: ubuntu-latest
+    needs: prepare_yarn
+    env:
+      HARVESTER_VERSION: ${{ inputs.harvester_version || env.DEFAULT_HARVESTER_VERSION }}
+      HARVESTER_REPO: ${{ inputs.harvester_repo || env.DEFAULT_HARVESTER_REPO }}
+      HARVESTER_GITHUB_USER: ${{ inputs.harvester_github_user || env.DEFAULT_HARVESTER_GITHUB_USER }}
+      HARVESTER_DIR: harvester-ui-extension
+      GIT_USER_EMAIL: service@jetsion.com
+      GIT_USER_NAME: github-actions[bot]
+    steps:
+      - name: Clone Or Update Repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -d "${HARVESTER_DIR}/.git" ]; then
+            git clone "https://github.com/wusung/harvester-ui-extension.git" "${HARVESTER_DIR}"
+          fi
+          (cd "${HARVESTER_DIR}" && git fetch --prune && git pull --ff-only)
+      - name: Restore Corepack Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/corepack
+          key: corepack-yarn-1.22.22
+      - name: Enable Corepack
+        shell: bash
+        run: corepack enable
+      - name: Install Dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
+          yarn --frozen-lockfile install
+      - name: Lint Fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
+          yarn run lint --fix
+      - name: Build Package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
+          yarn build-pkg harvester
+
+  update_version:
+    runs-on: ubuntu-latest
+    needs: build
+    env:
+      HARVESTER_VERSION: ${{ inputs.harvester_version || env.DEFAULT_HARVESTER_VERSION }}
+      HARVESTER_REPO: ${{ inputs.harvester_repo || env.DEFAULT_HARVESTER_REPO }}
+      HARVESTER_GITHUB_USER: ${{ inputs.harvester_github_user || env.DEFAULT_HARVESTER_GITHUB_USER }}
+      HARVESTER_DIR: harvester-ui-extension
+      GIT_USER_EMAIL: service@jetsion.com
+      GIT_USER_NAME: github-actions[bot]
+    steps:
+      - name: Clone Or Update Repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -d "${HARVESTER_DIR}/.git" ]; then
+            git clone "https://github.com/wusung/harvester-ui-extension.git" "${HARVESTER_DIR}"
+          fi
+          (cd "${HARVESTER_DIR}" && git fetch --prune && git pull --ff-only)
+      - name: Download dist-pkg
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-pkg-${{ env.HARVESTER_VERSION }}
+          path: harvester-ui-extension/dist-pkg
+      - name: Update Harvester Version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${HARVESTER_VERSION}"
+          repo="${HARVESTER_REPO}"
+          github_user="${HARVESTER_GITHUB_USER}"
+          cd "${HARVESTER_DIR}"
+          git config user.email "${GIT_USER_EMAIL}"
+          git config user.name "${GIT_USER_NAME}"
+          git checkout gh-pages
+          if [ ! -d "dist-pkg/harvester-${version}" ]; then
+            echo "Error: dist-pkg/harvester-${version} not found"
+            exit 1
+          fi
+          rm -rf "extensions/harvester/${version}/plugin"
+          mkdir -p "extensions/harvester/${version}/plugin"
+          cd "dist-pkg/harvester-${version}"
+          find . -maxdepth 1 -type f \( -name "*.js" -o -name "*.js.map" -o -name "*.json" -o -name "*.html" \) -exec cp {} "../../extensions/harvester/${version}/plugin/" \;
+          cd ../..
+          if [ -d "dist-pkg/harvester-${version}/img" ]; then
+            cp -r "dist-pkg/harvester-${version}/img" "extensions/harvester/${version}/plugin/"
+          fi
+          cd "extensions/harvester/${version}"
+          find plugin -type f | LC_ALL=C sort > files.txt
+          cd ../../..
+          sed -i.bak "/endpoint:/,/${version}/ s|https://raw.githubusercontent.com/.*/harvester-ui-extension/gh-pages/extensions/harvester/${version}|https://raw.githubusercontent.com/${github_user}/harvester-ui-extension/gh-pages/extensions/harvester/${version}|" \
+            "charts/harvester/${version}/values.yaml"
+          sed -i.bak "/compressedEndpoint:/,/${version}\.tgz/ s|https://raw.githubusercontent.com/.*/harvester-ui-extension/gh-pages/extensions/harvester/${version}\.tgz|https://raw.githubusercontent.com/${github_user}/harvester-ui-extension/gh-pages/extensions/harvester/${version}.tgz|" \
+            "charts/harvester/${version}/values.yaml"
+          rm -f "charts/harvester/${version}/values.yaml.bak"
+          cd "charts/harvester"
+          helm package "${version}"
+          mv "harvester-${version}.tgz" ../../assets/harvester/
+          cd ../..
+          helm repo index assets --url "https://raw.githubusercontent.com/${github_user}/harvester-ui-extension/gh-pages/assets" --merge index.yaml
+          git add .
+          git commit --amend -m "CI Build Artifacts"
+          git push origin gh-pages -f

@@ -20,7 +20,7 @@ on:
         required: false
 
 env:
-  DEFAULT_HARVESTER_VERSION: "1.6.0"
+  DEFAULT_HARVESTER_VERSION: "1.6.2"
   DEFAULT_HARVESTER_REPO: "harvester"
   DEFAULT_HARVESTER_GITHUB_USER: "wusung"
 

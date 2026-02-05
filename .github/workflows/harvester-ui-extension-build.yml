@@ -80,6 +80,7 @@ jobs:
           cd "${HARVESTER_DIR}"
           yarn build-pkg harvester
       - name: Publish Packages
+        if: github.event_name == 'push'
         shell: bash
         run: |
           set -euo pipefail
@@ -199,4 +200,16 @@ jobs:
           helm repo index assets --url "https://raw.githubusercontent.com/${github_user}/harvester-ui-extension/gh-pages/assets" --merge index.yaml
           git add .
           git commit --amend -m "CI Build Artifacts"
+      - name: Upload gh-pages content
+        uses: actions/upload-artifact@v4
+        with:
+          name: gh-pages-content-${{ env.HARVESTER_VERSION }}
+          path: harvester-ui-extension/
+          retention-days: 30
+      - name: Push to gh-pages
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${HARVESTER_DIR}"
           git push origin gh-pages -f

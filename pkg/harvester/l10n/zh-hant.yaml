@@ -1855,7 +1855,7 @@ typeLabel:
       one { 虛擬私有雲 }
       other { 虛擬私有雲 }
     }
-  networking.k8s.io.networkpolicy: "{計數，複數，\n  一項 { 網路政策 }\n  其他{網絡政策}\n}"
+  networking.k8s.io.networkpolicy: "{count, plural,\n  one { 網路政策 }\n  other { 網路政策 }\n}"
   harvesterhci.io.cloudtemplate: |-
     {count, plural,
       one { 雲端設定範本 }
@@ -1941,7 +1941,7 @@ typeLabel:
       one { vGPU 裝置 }
       other { vGPU 裝置 }
     }
-  devices.harvesterhci.io.migconfiguration: "{計數，複數，\n  一個 { vGPU MIG 配置 }\n  其他 { vGPU MIG 配置 }\n}"
+  devices.harvesterhci.io.migconfiguration: "{count, plural,\n  one { vGPU MIG 配置 }\n  other { vGPU MIG 配置 }\n}"
   harvesterhci.io.secret: |-
     {count, plural,
       one { 密鑰 }

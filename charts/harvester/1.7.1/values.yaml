@@ -4,9 +4,9 @@ plugin:
   enabled: true
   versionOverride: ""
   endpoint: >-
-    https://raw.githubusercontent.com/harvester/harvester-ui-extension/gh-pages/extensions/harvester/1.7.1
+    https://raw.githubusercontent.com/wusung/harvester-ui-extension/gh-pages/extensions/harvester/1.7.1
   compressedEndpoint: >-
-    https://raw.githubusercontent.com/harvester/harvester-ui-extension/gh-pages/extensions/harvester/1.7.1.tgz
+    https://raw.githubusercontent.com/wusung/harvester-ui-extension/gh-pages/extensions/harvester/1.7.1.tgz
   noCache: false
   noAuth: false
   metadata:
